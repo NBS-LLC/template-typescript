@@ -4,11 +4,16 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "clean": "rimraf dist",
+    "watch:compile": "tsc --watch",
+    "watch:build": "webpack --watch",
+    "start": "npm-run-all clean --parallel watch:compile watch:build --print-label",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "html-webpack-plugin": "^4.3.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
